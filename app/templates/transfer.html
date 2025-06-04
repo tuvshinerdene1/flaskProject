@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Шилжүүлэг бүртгэх</title>
+    <style>
+        body { background: #f4f4f4; font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);}
+        h2 { text-align: center; margin-bottom: 20px; }
+        form label { display: block; margin-top: 10px; }
+        form input, form select, form textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        button { margin-top: 20px; width: 100%; padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Шилжүүлэг бүртгэх</h2>
+        <form action="/transfer" method="post">
+            <label for="sender_account">Шилжүүлэгч данс</label>
+            <input type="text" id="sender_account" name="sender_account" required>
+
+            <label for="receiver_bank">Хүлээн авах банк</label>
+            <select id="receiver_bank" name="receiver_bank" required>
+                <option value="">Сонгоно уу</option>
+                <option value="Хаан банк">Хаан банк</option>
+                <option value="Голомт банк">Голомт банк</option>
+                <option value="Хас банк">Хас банк</option>
+                <option value="Төрийн банк">Төрийн банк</option>
+            </select>
+
+            <label for="receiver_account">Хүлээн авах данс</label>
+            <input type="text" id="receiver_account" name="receiver_account" required>
+
+            <label for="receiver_name">Хүлээн авагчийн нэр</label>
+            <input type="text" id="receiver_name" name="receiver_name" required>
+
+            <label for="amount">Гүйлгээний дүн</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+
+            <label for="currency">Валют</label>
+            <select id="currency" name="currency" required>
+                <option value="MNT">MNT</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+
+            <label for="description">Гүйлгээний утга</label>
+            <textarea id="description" name="description" rows="2"></textarea>
+
+            <label for="frequency">Давтамж</label>
+            <select id="frequency" name="frequency" required>
+                <option value="monthly">Сар бүр</option>
+                <option value="daily">Өдөр бүр</option>
+                <option value="weekly">Долоо хоног бүр</option>
+            </select>
+
+            <button type="submit">Бүртгэх</button>
+        </form>
+    </div>
+</body>
+</html>

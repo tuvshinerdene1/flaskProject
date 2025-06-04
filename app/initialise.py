@@ -10,5 +10,6 @@ class Initialise():
             app.config["DB_LOCATION"],
             app.config["DB_DATABASE"]
         )
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+        app.secret_key = app.config['SECRET_KEY']
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         return app
